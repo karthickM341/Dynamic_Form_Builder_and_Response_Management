@@ -1,0 +1,10 @@
+{
+  "info": {"name": "Dynamic Form Builder API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key":"baseUrl","value":"http://localhost:8000/api"},{"key":"token","value":""}],
+  "item": [
+    {"name":"Register","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"username\":\"admin\",\"email\":\"admin@example.com\",\"password\":\"Admin@123\",\"role\":\"admin\"}"},"url":"{{baseUrl}}/auth/register"}},
+    {"name":"Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"username\":\"admin\",\"password\":\"Admin@123\"}"},"url":"{{baseUrl}}/auth/login"}},
+    {"name":"Forms","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/forms"}},
+    {"name":"Dashboard","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/analytics/dashboard"}}
+  ]
+}
